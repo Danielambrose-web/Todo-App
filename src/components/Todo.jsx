@@ -14,19 +14,16 @@ const Todo = () => {
       { no: count++, text: inputref.current.value, display: "  " },
     ]);
     inputref.current.value = "";
-    localStorage.setItem('Todo_count' , count)
+    localStorage.setItem("Todo_count", count);
   };
 
   useEffect(() => {
-    setTodo(JSON.parse(localStorage.getItem("Todo")));
-    count = localStorage.getItem('Todo_count ')
-  },[]);
+    setTodo(JSON.parse(localStorage.getItem("Todo")) || []);
+    count = localStorage.getItem("Todo_count");
+  }, []);
 
   useEffect(() => {
-    setTimeout(() => {
-      console.log(Todo);
-      localStorage.setItem("Todo", JSON.stringify(Todo));
-    }, 100);
+    localStorage.setItem("Todo", JSON.stringify(Todo));
   }, [Todo]);
 
   return (
