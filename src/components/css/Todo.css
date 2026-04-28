@@ -1,0 +1,67 @@
+/* Main container */
+.Todo {
+  background: #05070d;
+  min-height: 100vh;
+  padding: 40px 20px;
+  color: #e6faff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Header */
+.Header {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #00f7ff;
+  text-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff;
+}
+
+/* Input section */
+.Input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+/* Input field */
+.Input input {
+  padding: 12px 15px;
+  width: 250px;
+  border: 1px solid #00f7ff;
+  border-radius: 8px;
+  background: transparent;
+  color: #fff;
+  outline: none;
+  box-shadow: 0 0 10px #00f7ff inset;
+}
+
+.Input input::placeholder {
+  color: #66ffff;
+}
+
+/* Button */
+.Input button {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(45deg, #00f7ff, #00ff88);
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 0 10px #00ffcc;
+}
+
+.Input button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #00ffcc, 0 0 40px #00f7ff;
+}
+
+/* Todo list container */
+.todoList {
+  width: 100%;
+  max-width: 400px;
+}
