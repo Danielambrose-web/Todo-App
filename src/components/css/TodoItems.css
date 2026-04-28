@@ -1,0 +1,51 @@
+.TodoItem {
+  background: rgba(0, 255, 170, 0.05);
+  border: 1px solid rgba(0, 255, 170, 0.2);
+  padding: 12px 15px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  backdrop-filter: blur(10px);
+  transition: 0.3s ease;
+}
+
+/* Hover glow */
+.TodoItem:hover {
+  box-shadow: 0 0 15px #00ffcc, 0 0 30px #00f7ff;
+  transform: translateY(-2px);
+}
+
+/* Left side */
+.TodoItem-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Icons */
+.TodoItem img {
+  width: 20px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.TodoItem img:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 6px #00ffcc);
+}
+
+/* Text */
+.todoitemText {
+  color: #ccffff;
+  font-size: 16px;
+}
+
+/* Optional: completed state (we'll use later) */
+.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
