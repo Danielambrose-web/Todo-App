@@ -19,12 +19,18 @@ const Todo = () => {
 
   useEffect(() => {
     setTodo(JSON.parse(localStorage.getItem("Todo")) || []);
-    count = localStorage.getItem("Todo_count");
+    const savedTodos = JSON.parse(localStorage.getItem("Todo")) || [];
+    setTodo(savedTodos);
   }, []);
 
   useEffect(() => {
     localStorage.setItem("Todo", JSON.stringify(Todo));
   }, [Todo]);
+
+  const deleteItem = (id) => {
+    const updated = Todo.filter((item) => item.no !== id);
+    setTodo(updated);
+  };
 
   return (
     <div className="Todo">
@@ -48,6 +54,7 @@ const Todo = () => {
               text={item.text}
               display={item.display}
               text={item.text}
+              deleteItem={deleteItem}
             />
           );
         })}
