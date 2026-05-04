@@ -11,26 +11,28 @@ const Todo = () => {
   const add = () => {
     setTodo([
       ...Todo,
-      { no: count++, text: inputref.current.value, display: "  " },
+      { no: count++, text: inputref.current.value, display: "" },
     ]);
     inputref.current.value = "";
     localStorage.setItem("Todo_count", count);
   };
 
   useEffect(() => {
-    setTodo(JSON.parse(localStorage.getItem("Todo")) || []);
-    const savedTodos = JSON.parse(localStorage.getItem("Todo")) || [];
-    setTodo(savedTodos);
+    setTodo(JSON.parse(localStorage.getItem("Todo")));
+    count = localStorage.getItem('Todo_count')
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("Todo", JSON.stringify(Todo));
+    setTimeout(() => {
+      localStorage.setItem("Todo", JSON.stringify(Todo));
+      console.log(Todo)
+    }, 100);
   }, [Todo]);
 
-  const deleteItem = (id) => {
-    const updated = Todo.filter((item) => item.no !== id);
-    setTodo(updated);
-  };
+  // const deleteItem = (id) => {
+  //   const updated = Todo.filter((item) => item.no !== id);
+  //   setTodo(updated);
+  // };
 
   return (
     <div className="Todo">
@@ -54,7 +56,8 @@ const Todo = () => {
               text={item.text}
               display={item.display}
               text={item.text}
-              deleteItem={deleteItem}
+              setTodo ={setTodo}
+              // deleteItem={deleteItem}
             />
           );
         })}
