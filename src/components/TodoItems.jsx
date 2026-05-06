@@ -36,7 +36,12 @@ const TodoItems = ({ no, display, text, setTodo }) => {
         ) : (
           <img src={tick} alt="" />
         )}
-        <div className="todoitemText">{text} </div>
+        <div
+          className="todoitemText"
+          style={{ textDecoration: display === "" ? "none" : "line-through" }}
+        >
+          {text}
+        </div>
       </div>
 
       <img src={cross} onClick={() => deleteTodo(no)} />
