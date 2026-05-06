@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import "./css/Todo.css";
 import { useState } from "react";
 import TodoItems from "./TodoItems";
@@ -57,7 +57,7 @@ const Todo = () => {
               display={item.display}
               text={item.text}
               setTodo ={setTodo}
-              // deleteItem={deleteItem}
+
             />
           );
         })}
